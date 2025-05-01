@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Clonagem</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Painel de Clonagem</h1>
+        <form method="POST">
+            <h2>Canais</h2>
+            <input type="text" name="origem" placeholder="Canal de origem (@username ou ID)" required><br>
+            <input type="text" name="destino" placeholder="Canal de destino (@username ou ID)" required><br>
+
+            <h2>Links Afiliados</h2>
+            <input type="text" name="link_original" placeholder="Link original (ex: bet365.com)"><br>
+            <input type="text" name="link_afiliado" placeholder="Seu link de afiliado (ex: seuafiliado.com)"><br>
+
+            <button type="submit">Salvar Configurações</button>
+        </form>
+
+        <h2>Canais Configurados</h2>
+        <ul>
+            {% for canal, destino in config['clone_pairs'].items() %}
+                <li>{{ canal }} → {{ destino }}
+                    <a href="{{ url_for('delete_channel', canal_origem=canal) }}">❌</a>
+                </li>
+            {% else %}
+                <li>Nenhum canal configurado ainda.</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Links de Afiliado Configurados</h2>
+        <ul>
+            {% for original, novo in config['link_replacements'].items() %}
+                <li>{{ original }} → {{ novo }}
+                    <a href="{{ url_for('delete_link', link_original=original) }}">❌</a>
+                </li>
+            {% else %}
+                <li>Nenhum link configurado ainda.</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

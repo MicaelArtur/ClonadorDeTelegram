@@ -1,5 +1,5 @@
 @echo off
-cd /d "C:\Users\micae\OneDrive\Área de Trabalho\ClonadorTelegram"
+cd /d "%~dp0"
 call venv\Scripts\activate
 python clonador.py
 pause

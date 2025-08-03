@@ -1,5 +1,5 @@
 {
-    "api_id": api_id,
+    "api_id": 12345678, #é um exemplo de api_id 
     "api_hash": "api_hash",
     "token": "token",
     "clone_pairs": {},

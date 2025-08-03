@@ -1,7 +1,7 @@
 {
-    "api_id": 22256815,
-    "api_hash": "8fe5c63cc7bf5d37f46403c668f2ef03",
-    "token": "8114938813:AAFsi0Wx9RjfxU_KX0usAv2Je4B6w1Vp1vE",
+    "api_id": api_id,
+    "api_hash": "api_hash",
+    "token": "token",
     "clone_pairs": {},
     "link_replacements": {}
 }
